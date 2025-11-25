@@ -78,6 +78,12 @@ body {
   font-size: 18px;
 }
 
+.nav-icon img {
+ width: 25px;
+ height: 25px;
+ object-fit: contain;
+}
+
 .logout {
   margin-top: auto;
   margin-bottom: 20px;
