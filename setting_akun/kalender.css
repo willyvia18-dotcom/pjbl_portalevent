@@ -1,0 +1,207 @@
+/* === GLOBAL === */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f2f1f1;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 85vw;
+  height: 90vh;
+  margin: 0;
+  padding: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background-color: #4b2721;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.sidebar-logo {
+  display: flex;
+  gap: 5px;
+}
+
+.sidebar-logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  text-decoration: none;
+  padding: 14px 40px;
+  font-size: 15px;
+  transition: background-color 0.2s;
+}
+
+.nav-item:hover {
+  background-color: #3b1c15;
+}
+
+.nav-icon img {
+  width: 22px;
+}
+
+.logout {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+/* CONTENT */
+.content {
+  flex: 1;
+  background-color: #ffffff;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 40px 50px;
+}
+
+.content-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tab-btn {
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #d7b48c;
+  font-weight: 500;
+}
+
+/* === KALENDAR === */
+.calendar-container {
+  width: 420px;
+  border: 2px solid #d7b48c;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.nav-btn {
+  background: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.day-name {
+  font-weight: bold;
+  color: #666;
+  font-size: 14px;
+}
+
+.day,
+.empty-date {
+  padding: 10px 0;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* tanggal valid */
+.day {
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.day:hover {
+  background-color: #f4e7d6;
+}
+
+/* tanggal kosong */
+.empty-date {
+  color: #ccc;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+
+/* tanggal aktif */
+.day.active {
+  border: 2px solid #d7b48c;
+  color: #d7b48c;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.calendar-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.done-btn {
+  background-color: #d7b48c;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+}

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="landingpage.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-text">
+            <img src="../assets/logo.png" alt="Logo PAWERTI">
+            <h1>PAWERTI</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../portalevent_landingpage/landingpage.html">Beranda</a></li>
+                <li><a href="#event">Event</a></li>
+                <li><a href="#Tentang Kami">Tentang Kami</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="../portalevent_login/login.html">Login</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" aria-label="Buka menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Mobile menu (hidden by default, shown when hamburger aktif) -->
+        <div class="mobile-menu" aria-hidden="true">
+            <ul>
+                <li><a href="../portalevent_landingpage/landingpage.html">Beranda</a></li>
+                <li><a href="#event">Event</a></li>
+                <li><a href="#Tentang Kami">Tentang Kami</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="../portalevent_login/login.html">Login</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>Selamat Datang di Website Kami</h2>
+        <p>Temukan dan ikuti berbagai event budaya Jawa, dari pertunjukan wayang hingga workshop batik tradisional</p>
+        <div class="hero-button">
+            <button class="cari">Cari Event</button>
+            <button class="partisipasi">Partisipasi</button>
+        </div>
+    </section>
+
+    <!-- Kategori Event Kebudayaan Baru -->
+    <section class="section kategori-budaya" id="kategori-budaya">
+        <h3>Kategori Event Kebudayaan</h3>
+        <p>Jelajahi berbagai kategori event budaya Jawa yang tersedia</p>
+
+        <div class="kategori-cards">
+            <div class="kategori-card">
+                <div class="icon-container">
+                    <img src="../assets/pertunjukan.png" alt="Pertunjukan Seni">
+                </div>
+                <span class="event-count">10 Event</span>
+                <h4>Pertunjukan Seni</h4>
+                <p>Wayang, tari tradisional, dan pertunjukan seni budaya Jawa.</p>
+            </div>
+
+            <div class="kategori-card">
+                <div class="icon-container">
+                    <img src="../assets/workshop.png" alt="Workshop Budaya">
+                </div>
+                <span class="event-count">8 Event</span>
+                <h4>Workshop Budaya</h4>
+                <p>Pelatihan batik, kerajinan, dan keterampilan tradisional.</p>
+            </div>
+
+            <div class="kategori-card">
+                <div class="icon-container">
+                    <img src="../assets/musik.png" alt="Musik Tradisional">
+                </div>
+                <span class="event-count">7 Event</span>
+                <h4>Musik Tradisional</h4>
+                <p>Gamelan, karawitan, dan musik klasik Jawa.</p>
+            </div>
+
+            <div class="kategori-card">
+                <div class="icon-container">
+                    <img src="../assets/upacara.png" alt="Upacara Adat">
+                </div>
+                <span class="event-count">5 Event</span>
+                <h4>Upacara Adat</h4>
+                <p>Sekaten, grebeg, dan upacara tradisional Jawa.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="event-popular" id="event">
+        <div class="event-header">
+            <h2>Event Populer</h2>
+            <p>Event budaya Jawa pilihan yang tak boleh dilewatkan</p>
+        </div>
+
+        <div class="event-container">
+            <!-- Event 1 -->
+            <div class="event-card">
+            <div class="event-image">
+                <img src="../assets/ballet.png" alt="The Indonesia Ballet Gala">
+                <span class="price-tag">Rp.30.000</span>
+                <div class="icon-group">
+                <button class="icon"><img src="../assets/bagikan.png" alt="Share"></button>
+                <button class="icon"><img src="../assets/love.png" alt="Love"></button>
+                </div>
+            </div>
+            <div class="event-info">
+                <h3>The Indonesia Ballet Gala</h3>
+                <p>Beksan telaga angsa merupakan tarian yang terinspirasi dari legenda angsa putih…</p>
+                <p class="date"><img src="../assets/hari.png"> Minggu, 9 November 2025</p>
+                <p class="location"><img src="../assets/lok.png"> Gallery Ciputra Artpreunur, Jakarta</p>
+                <p class="audience"><img src="../assets/orang.png"> 2.500 penonton</p>
+            </div>
+            </div>
+
+
+            <!-- Event 2 -->
+            <div class="event-card">
+            <div class="event-image">
+                <img src="../assets/seblang.png" alt="Seblang Oleh Sari">
+                <span class="price-tag free">Free</span>
+                <div class="icon-group">
+                <button class="icon"><img src="../assets/bagikan.png" alt="Share"></button>
+                <button class="icon"><img src="../assets/love.png" alt="Love"></button>
+                </div>
+            </div>
+            <div class="event-info">
+                <h3>Seblang Oleh Sari</h3>
+                <p>Ritual adat kuno dari masyarakat Suku Osing di Desa Olehsari, Banyuwangi…</p>
+                <p class="date"><img src="../assets/hari.png"> Setelah hari raya Idul Fitri</p>
+                <p class="location"><img src="../assets/lok.png"> Desa Olehsari, Kec. Glagah, Banyuwangi</p>
+                <p class="audience"><img src="../assets/orang.png"> 5.000 penonton</p>
+            </div>
+            </div>
+
+            <!-- Event 3 -->
+            <div class="event-card">
+            <div class="event-image">
+                <img src="../assets/reog.png" alt="Festival Nasional Reog Ponorogo">
+                <span class="price-tag">Rp.20.000</span>
+                <div class="icon-group">
+                <button class="icon"><img src="../assets/bagikan.png" alt="Share"></button>
+                <button class="icon"><img src="../assets/love.png" alt="Love"></button>
+                </div>
+            </div>
+            <div class="event-info">
+                <h3>Festival Nasional Reog Ponorogo</h3>
+                <p>Festival bergengsi yang menampilkan grup reog terbaik dari Ponorogo…</p>
+                <p class="date"><img src="../assets/hari.png"> Minggu, 9 November 2025</p>
+                <p class="location"><img src="../assets/lok.png"> Alun-alun Kabupaten Ponorogo</p>
+                <p class="audience"><img src="../assets/orang.png"> 4.000 penonton</p>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Tombol Lihat Semua Event -->
+        <div class="lihat-semua">
+        <button class="lihat-event-btn">Lihat Semua Event</button>
+        </div>
+
+        <!-- Kontak Kami -->
+        <section class="contact-section" id="kontak">
+        <div class="contact-header">
+            <h2>Kontak <span>Kami</span></h2>
+            <p>
+            Ada pelayanan tentang event, membeli tiket atau ingin berkolaborasi?
+            Kami siap membantu anda.
+            </p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+            <h3>Informasi Kontak</h3>
+            <div class="info-item">
+                <div class="icon"><img src="../assets/email.png" alt="email"></div>
+                <div>
+                <h4>Email</h4>
+                <p>Info : info@budayajawa.id</p>
+                <p>Event : event@jawa.id</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon"><img src="../assets/telpon.png" alt="hubungi"></div>
+                <div>
+                <h4>Telepon</h4>
+                <p>0881 0366 24551</p>
+                <p>0812 1693 3281</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="icon"><img src="../assets/alamat.png" alt="Alamat"></div>
+                <div>
+                <h4>Alamat</h4>
+                <p>
+                    Jl. Tanimbar No 22, Kasim, Kec. Klojen, Kota Malang, Jawa Timur
+                </p>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <h4>Jam Operasional</h4>
+                <p>Senin - Jumat <span>08:00 - 17:00 WIB</span></p>
+                <p>Sabtu <span>08:00 - 16:00 WIB</span></p>
+                <p>Minggu <span>09:00 WIB</span></p>
+            </div>
+            </div>
+
+            <div class="contact-form">
+            <h3>Kirim Pesan</h3>
+            <form>
+                <label>Nama Lengkap</label>
+                <input type="text" placeholder="Masukkan nama lengkap" required />
+
+                <label>Email</label>
+                <input type="email" placeholder="Masukkan email" required />
+
+                <label>Subjek</label>
+                <input type="text" placeholder="Masukkan subjek pesan" required />
+
+                <label>Pesan</label>
+                <textarea placeholder="Tulis pesan anda di sini..." rows="5"></textarea>
+
+                <button type="submit">Kirim pesan anda</button>
+            </form>
+            </div>
+        </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col footer-about">
+            <div class="footer-logo">
+                <img src="../assets/logo2.png" alt="Logo Pawerti" />
+                <h3>Pawerti</h3>
+            </div>
+            <p>
+                Melestarikan dan mempromosikan kekayaan budaya Jawa melalui berbagai
+                event dan kegiatan budaya.
+            </p>
+            </div>
+
+        <div class="footer-col footer-category">
+        <h3>Kategori</h3>
+        <ul>
+            <li>Pertunjukan Seni</li>
+            <li>Workshop Budaya</li>
+            <li>Musik Tradisional</li>
+            <li>Upacara Adat</li>
+        </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+        <h3>Kontak</h3>
+        <p>Email : inpo@portalkebudayaan@gmail.com</p>
+        <p>Telepon : 0881 0366 24551</p>
+        <p>
+            Alamat : Jl. Tanimbar No 22, Kasim, Kec. Klojen,<br>
+            Kota Malang Jawa Timur
+        </p>
+        </div>
+    </div>
+
+  <hr class="footer-line" />
+</footer>
+
+<script>
+    (function(){
+        const btn = document.querySelector('.hamburger');
+        const menu = document.querySelector('.mobile-menu');
+        if(!btn || !menu) return;
+
+        function toggleMenu(){
+            const isOpen = btn.classList.toggle('active');
+            menu.classList.toggle('open', isOpen);
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        btn.addEventListener('click', toggleMenu);
+
+        // close when a link is clicked
+        menu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', ()=>{
+                btn.classList.remove('active');
+                menu.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+                menu.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            });
+        });
+    })();
+</script>
+
+</body>
+</html>

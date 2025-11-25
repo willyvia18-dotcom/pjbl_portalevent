@@ -1,0 +1,296 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f2f1f1;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 900px;
+  padding: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* LEFT SIDE */
+.left-panel {
+  position: relative;
+  flex: 1;
+  background: url("../assets/login_image.png") center/cover no-repeat;}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+}
+
+
+.overlay .logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.overlay h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* RIGHT SIDE */
+.right-panel {
+  flex: 1;
+  padding: 40px 50px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.small-text {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 25px;
+}
+
+.small-text a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.name-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+}
+
+.form input,
+.password-field input {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: #f2f2f2;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.08);
+  font-size: 0.95rem;
+  width: 100%;
+  box-sizing: border-box; /* <-- penting biar sejajar */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px; /* tambah jarak antar kolom agar terlihat rapi */
+}
+
+
+.password-field {
+  position: relative;
+}
+
+.password-field .eye {
+  position: absolute;
+  right: 15px;
+  top: 12px;
+  cursor: pointer;
+  color: #555;
+}
+
+/* Button */
+button[type="submit"] {
+  background-color: #4a2b28;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #3b1e1c;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-size: 0.9rem;
+  margin: 20px 0;
+}
+
+.divider span {
+  height: 1px;
+  background: #aaa;
+  width: 100px;
+  margin: 0 10px;
+}
+
+/* Social buttons */
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-login button {
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.social-login button:hover {
+  background: #ececec;
+}
+
+.social-login img {
+  width: 20px;
+  height: 20px;
+}
+
+/* ============================= */
+/* DESKTOP  (min-width: 1024px) */
+/* ============================= */
+@media (min-width: 1024px) {
+  .main-container {
+    width: 900px; /* ukuran normal desktop */
+    flex-direction: row;
+    padding: 50px;
+  }
+
+  .left-panel {
+    height: auto;
+  }
+
+  .right-panel {
+    padding: 40px 50px;
+  }
+}
+
+/* ============================= */
+/* TABLET (max-width: 1024px)   */
+/* ============================= */
+@media (max-width: 1024px) {
+  .main-container {
+    width: 90%;
+    padding: 30px;
+    flex-direction: column;
+  }
+
+  .left-panel {
+    height: 250px; 
+    flex: unset;
+    background-position: center;
+  }
+
+  .overlay {
+    padding: 20px;
+    justify-content: flex-end;
+    text-align: center;
+  }
+
+  .overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .right-panel {
+    padding: 30px 20px;
+  }
+
+  .name-group {
+    grid-template-columns: 1fr; /* kolom full 1 baris */
+    gap: 10px;
+  }
+
+  button[type="submit"] {
+    padding: 12px;
+  }
+}
+
+/* ============================= */
+/* SMARTPHONE (max-width: 600px)*/
+/* ============================= */
+@media (max-width: 600px) {
+body {
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-container {
+    width: 95vw;
+    height: auto;
+    padding: 20px;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: auto;
+  }
+
+  .left-panel {
+    height: 200px;
+  }
+
+  .overlay {
+    padding: 15px;
+  }
+
+  .overlay h1 {
+    font-size: 1.3rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .right-panel {
+    padding: 20px 10px;
+  }
+
+  .form {
+    gap: 15px;
+  }
+
+  .social-login {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-login button {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+}

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seting Akun - Pawarti</title>
+  <link rel="stylesheet" href="kalender.css" />
+</head>
+
+<body>
+  <div class="main-container">
+    
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="../assets/logo2.png" alt="Pawarti Logo" />
+        <h3 class="sidebar-title">Pawarti</h3>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item active">
+          <span class="nav-icon"><img src="../assets/beranda.png"></span> Beranda
+        </a>
+        <a href="#" class="nav-item">
+          <span class="nav-icon"><img src="../assets/kalenderevent.png"></span> Kalender Event
+        </a>
+        <a href="#" class="nav-item logout">
+          <span class="nav-icon"><img src="../assets/keluar.png"></span> Keluar dari akun
+        </a>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <h1 class="content-title">Kalender</h1>
+
+      <!-- TAB BUTTON -->
+      <div class="tab-buttons">
+        <button class="tab-btn">Kalender</button>
+      </div>
+
+      <!-- KALENDER -->
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button id="prevMonth" class="nav-btn">&lt;</button>
+          <h2 id="monthYear"></h2>
+          <button id="nextMonth" class="nav-btn">&gt;</button>
+        </div>
+
+        <div class="calendar-grid" id="calendarGrid">
+          <div class="day-name">Mo</div>
+          <div class="day-name">Tu</div>
+          <div class="day-name">We</div>
+          <div class="day-name">Th</div>
+          <div class="day-name">Fr</div>
+          <div class="day-name">Sa</div>
+          <div class="day-name">Su</div>
+        </div>
+
+        <div class="calendar-footer">
+          <button class="done-btn">Done</button>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- === JAVASCRIPT KALENDER FINAL === -->
+  <script>
+    const monthYear = document.getElementById("monthYear");
+    const calendarGrid = document.getElementById("calendarGrid");
+
+    let currentDate = new Date();
+    let selectedDay = null;
+
+    function renderCalendar() {
+      // hapus tanggal lama
+      calendarGrid.querySelectorAll(".day, .empty-date").forEach(el => el.remove());
+
+      let year = currentDate.getFullYear();
+      let month = currentDate.getMonth();
+
+      monthYear.innerText = `${currentDate.toLocaleString("id-ID", {
+        month: "long",
+      })} ${year}`;
+
+      let firstDay = new Date(year, month, 1).getDay();
+      let adjustedFirstDay = (firstDay === 0 ? 7 : firstDay) - 1;
+
+      let totalDays = new Date(year, month + 1, 0).getDate();
+
+      // Tambah hari kosong
+      for (let i = 0; i < adjustedFirstDay; i++) {
+        let empty = document.createElement("div");
+        empty.classList.add("empty-date");
+        empty.textContent = "";
+        calendarGrid.appendChild(empty);
+      }
+
+      // Tambah tanggal valid
+      for (let day = 1; day <= totalDays; day++) {
+        let dayElement = document.createElement("div");
+        dayElement.classList.add("day");
+        dayElement.textContent = day;
+
+        if (
+          selectedDay &&
+          selectedDay.day === day &&
+          selectedDay.month === month &&
+          selectedDay.year === year
+        ) {
+          dayElement.classList.add("active");
+        }
+
+        dayElement.addEventListener("click", () => {
+          selectedDay = { day, month, year };
+          renderCalendar();
+        });
+
+        calendarGrid.appendChild(dayElement);
+      }
+    }
+
+    document.getElementById("prevMonth").addEventListener("click", () => {
+      currentDate.setMonth(currentDate.getMonth() - 1);
+      renderCalendar();
+    });
+
+    document.getElementById("nextMonth").addEventListener("click", () => {
+      currentDate.setMonth(currentDate.getMonth() + 1);
+      renderCalendar();
+    });
+
+    renderCalendar();
+  </script>
+
+</body>
+</html>
