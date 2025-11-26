@@ -123,7 +123,11 @@ body {
 .tab-btn.active {
   background-color: #D7B48C;
   color: rgb(0, 0, 0);
-  font-weight: 600;
+}
+
+.tab-btn a {
+  color: #000000;
+  text-decoration: none;
 }
 
 /* === FORM CARD === */

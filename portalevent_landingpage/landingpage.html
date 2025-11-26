@@ -277,6 +277,24 @@
   <hr class="footer-line" />
 </footer>
 
+<!-- POPUP DETAIL EVENT -->
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-box">
+        <button class="close-popup" id="closePopup">✕</button>
+
+        <h2>Tanggal & Waktu</h2>
+        <h4 id="popupTitle">Judul Event</h4>
+        <p id="popupSchedule">Jadwal event tampil di sini</p>
+
+        <a class="add-calendar" href="../setting_akun/kalender.html">+ Tambahkan ke kalender</a>
+
+        <button class="btn-pesan">Pesan Sekarang</button>
+        <button class="btn-deskripsi"><a href="../portalevent_deskripsi/deskripsiseblang.html">Deskripsi Event</a></button>
+
+        <p class="cancel-popup">Tidak Jadi</p>
+    </div>
+</div>
+
 <script>
     (function(){
         const btn = document.querySelector('.hamburger');
@@ -304,7 +322,44 @@
             });
         });
     })();
-</script>
 
+
+    /* ===========================
+       POPUP SCRIPT
+    =========================== */
+
+    const popup = document.getElementById("popupOverlay");
+    const closePopup = document.getElementById("closePopup");
+
+    const eventImages = document.querySelectorAll(".event-image img");
+    const popupTitle = document.getElementById("popupTitle");
+    const popupSchedule = document.getElementById("popupSchedule");
+
+    eventImages.forEach(img => {
+        img.addEventListener("click", function () {
+            const card = img.closest(".event-card");
+            const title = card.querySelector("h3").textContent;
+            const schedule = card.querySelector(".date").textContent;
+
+            popupTitle.textContent = title;
+            popupSchedule.textContent = schedule;
+
+            popup.classList.add("active");
+            document.body.style.overflow = "hidden";
+        });
+    });
+
+    closePopup.addEventListener("click", () => {
+        popup.classList.remove("active");
+        document.body.style.overflow = "";
+    });
+
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+            popup.classList.remove("active");
+            document.body.style.overflow = "";
+        }
+    });
+</script>
 </body>
 </html>

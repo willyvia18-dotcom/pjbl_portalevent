@@ -104,7 +104,6 @@ h2 {
   gap: 18px; /* tambah jarak antar kolom agar terlihat rapi */
 }
 
-
 .password-field {
   position: relative;
 }
@@ -131,6 +130,11 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #3b1e1c;
+}
+
+button a {
+  color: white;
+  text-decoration: none;
 }
 
 /* Divider */

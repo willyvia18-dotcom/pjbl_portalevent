@@ -117,14 +117,18 @@ body {
   border: none;
   font-size: 14px;
   cursor: pointer;
-  background-color: #e5e5e5;
+  background-color: #d7b48c;
   font-weight: 500;
 }
 
 .tab-btn.active {
-  background: #d7b48c;
+  background: #e5e5e5;
   color: rgb(0, 0, 0);
-  font-weight: 600;
+}
+
+.tab-btn a {
+  color: #000000;
+  text-decoration: none;
 }
 
 /* EVENT SECTION */

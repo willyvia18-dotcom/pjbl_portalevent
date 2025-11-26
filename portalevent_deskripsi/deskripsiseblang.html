@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +10,36 @@
 <body>
     <header>
         <div class="logo-text">
-            <img src="../assets/logo2.png" alt="Logo PAWERTI">
+            <img src="../assets/logo.png" alt="Logo PAWERTI">
             <h1>PAWERTI</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="../portalevent_landingpage/landingpage.html">Beranda</a></li>
-                <li><a href="#Event">Event</a></li>
+                <li><a href="#event">Event</a></li>
                 <li><a href="#Tentang Kami">Tentang Kami</a></li>
-                <li><a href="#Kontak">Kontak</a></li>
+                <li><a href="#kontak">Kontak</a></li>
                 <li><a href="../portalevent_login/login.html">Login</a></li>
             </ul>
         </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" aria-label="Buka menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Mobile menu (hidden by default, shown when hamburger aktif) -->
+        <div class="mobile-menu" aria-hidden="true">
+            <ul>
+                <li><a href="../portalevent_landingpage/landingpage.html">Beranda</a></li>
+                <li><a href="#event">Event</a></li>
+                <li><a href="#Tentang Kami">Tentang Kami</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+                <li><a href="../portalevent_login/login.html">Login</a></li>
+            </ul>
+        </div>
     </header>
 
         <!-- Deskripsi Event -->
@@ -57,8 +74,8 @@
 
     <!-- Informasi Event -->
     <section class="info-event">
-        <div class="info-card tiket">
-            <h3>Dapatkan<br>Tiket</h3>
+        <div class="info-card tiket" onclick="openModal()" style="cursor: pointer;">
+         <h3>Dapatkan<br>Tiket</h3>
         </div>
         <div class="info-card">
             <img src="../assets/calendar.png" alt="Tanggal">
@@ -112,3 +129,69 @@
             </div>
         </div>
     </section>
+
+    <!-- Pop-up Modal Pesan Tiket -->
+<div id="modal-tiket" class="modal-overlay">
+    <div class="modal-content">
+        <h2>Pesan Tiket</h2>
+        <div class="modal-info">
+            <p class="event-name">Seblang Olehsari</p>
+            <p class="event-date">acara setelah hari raya idul fitri</p>
+            <p class="harga-tiket">Gratis</p>
+        </div>
+        <button class="btn-checkout" onclick="checkout()">Chekout Sekarang</button>
+    </div>
+</div>
+
+<script>
+     (function(){
+        const btn = document.querySelector('.hamburger');
+        const menu = document.querySelector('.mobile-menu');
+        if(!btn || !menu) return;
+
+        function toggleMenu(){
+            const isOpen = btn.classList.toggle('active');
+            menu.classList.toggle('open', isOpen);
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        btn.addEventListener('click', toggleMenu);
+
+        // close when a link is clicked
+        menu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', ()=>{
+                btn.classList.remove('active');
+                menu.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+                menu.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            });
+        });
+    })();
+
+    function openModal() {
+        document.getElementById('modal-tiket').classList.add('active');
+        document.body.style.overflow = 'hidden'; // Mencegah scroll saat modal terbuka
+    }
+
+    function closeModal() {
+        document.getElementById('modal-tiket').classList.remove('active');
+        document.body.style.overflow = 'auto'; // Mengaktifkan scroll kembali
+    }
+
+    function checkout() {
+        alert('Tiket Anda berhasil dipesan!');
+        closeModal();
+    }
+
+    // Menutup modal saat mengklik di luar konten modal
+    document.getElementById('modal-tiket').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+</script>
+</body>
+</html>
