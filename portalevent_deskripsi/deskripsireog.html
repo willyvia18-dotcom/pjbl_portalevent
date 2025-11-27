@@ -31,20 +31,21 @@
         <div class="event-container">
             <div class="event-text">
                 <h3>Festival Nasional  Reog Ponorogo</h3>
-                <p><strong>Seblang Olehsari: Tarian Sakral untuk Menolak Bala</strong></p>
+                <p><strong>Festival Nasional Reog Ponorogo</strong></p>
                 <p>
-                    Seblang Olehsari adalah tarian ritual sakral dari suku Osing di Banyuwangi.
-                    Tujuannya untuk menolak bala atau mengusir roh jahat, dan penarinya adalah
-                    seorang perempuan yang telah menopause.
+                    Festival Nasional Reog Ponorogo adalah acara tahunan di Kabupaten Ponorogo, Jawa Timur. 
+                    Acara ini merupakan kompetisi dan pameran seni yang bertujuan untuk melestarikan dan 
+                    mempromosikan seni Reog Ponorogo, salah satu seni budaya khas Indonesia.
                 </p>
                 <p>
-                    Ritual ini diiringi musik gamelan sederhana. Puncaknya, penari akan
-                    melemparkan properti yang ia pegang ke arah penonton, dan siapa pun yang
-                    menangkapnya dipercaya akan mendapat keberuntungan.
+                    Para peserta dari berbagai daerah menampilkan pertunjukan Reog terbaik mereka. Penilaian 
+                    meliputi gerakan tari, kostum, dan musik pengiring yang unik. Festival ini juga sering 
+                    dimeriahkan dengan acara pendukung seperti pameran dan karnaval.
                 </p>
                 <p>
-                    Secara etimologi, kata "Seblang" bermakna "keburukan telah hilang."
-                    Ritual ini menjadi simbol pembersihan desa dari segala hal negatif.
+                    Festival ini berperan penting dalam menjaga kelangsungan seni Reog Ponorogo sebagai warisan
+                    budaya. Event ini tidak hanya menjadi ajang unjuk kebolehan, tetapi juga sarana edukasi dan 
+                    promosi budaya kepada masyarakat luas.
                 </p>
                 <button class="btn-selengkapnya">Baca Selengkapnya</button>
             </div>
@@ -57,16 +58,16 @@
 
     <!-- Informasi Event -->
     <section class="info-event">
-        <div class="info-card tiket">
-            <h3>Dapatkan<br>Tiket</h3>
+        <div class="info-card tiket" onclick="openModal()" style="cursor: pointer;">
+         <h3>Dapatkan<br>Tiket</h3>
         </div>
         <div class="info-card">
             <img src="../assets/calendar.png" alt="Tanggal">
-            <p>Setelah Idul Fitri</p>
+            <p>27 Juni 2026</p>
         </div>
         <div class="info-card">
             <img src="../assets/location.png" alt="Lokasi">
-            <p>Desa Olehsari, Kec. Glagah, Banyuwangi</p>
+            <p>Alun alun Kabupaten Ponorogo</p>
         </div>
         <div class="info-card">
             <img src="../assets/audience.png" alt="Penonton">
@@ -112,3 +113,69 @@
             </div>
         </div>
     </section>
+
+    <!-- Pop-up Modal Pesan Tiket -->
+<div id="modal-tiket" class="modal-overlay">
+    <div class="modal-content">
+        <h2>Pesan Tiket</h2>
+        <div class="modal-info">
+            <p class="event-name">Seblang Olehsari</p>
+            <p class="event-date">acara setelah hari raya idul fitri</p>
+            <p class="harga-tiket">Gratis</p>
+        </div>
+        <button class="btn-checkout" onclick="checkout()">Chekout Sekarang</button>
+    </div>
+</div>
+
+<script>
+     (function(){
+        const btn = document.querySelector('.hamburger');
+        const menu = document.querySelector('.mobile-menu');
+        if(!btn || !menu) return;
+
+        function toggleMenu(){
+            const isOpen = btn.classList.toggle('active');
+            menu.classList.toggle('open', isOpen);
+            btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+
+        btn.addEventListener('click', toggleMenu);
+
+        // close when a link is clicked
+        menu.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', ()=>{
+                btn.classList.remove('active');
+                menu.classList.remove('open');
+                btn.setAttribute('aria-expanded', 'false');
+                menu.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            });
+        });
+    })();
+
+    function openModal() {
+        document.getElementById('modal-tiket').classList.add('active');
+        document.body.style.overflow = 'hidden'; // Mencegah scroll saat modal terbuka
+    }
+
+    function closeModal() {
+        document.getElementById('modal-tiket').classList.remove('active');
+        document.body.style.overflow = 'auto'; // Mengaktifkan scroll kembali
+    }
+
+    function checkout() {
+        alert('Tiket Anda berhasil dipesan!');
+        closeModal();
+    }
+
+    // Menutup modal saat mengklik di luar konten modal
+    document.getElementById('modal-tiket').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+</script>
+</body>
+</html>
