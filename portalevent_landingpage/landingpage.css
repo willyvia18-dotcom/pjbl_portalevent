@@ -345,6 +345,11 @@
         padding: 20px 0;
         }
 
+        .lihat-semua a {
+            text-decoration: none;
+            color: #fff;
+        }
+
         .lihat-event-btn {
         background: #4b2420;
         color: #fff;
