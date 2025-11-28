@@ -7,20 +7,40 @@
     <link rel="stylesheet" href="tentangkami.css">
 </head>
 <body>
- <!-- HEADER -->
-    <header class="navbar">
-    <div class="logo-section">
-      <img src="navba.png" alt="Logo Pawerti" class="logo-header">
-      <span class="brand-name">PAWERTI</span>
-    </div>
-    <nav class="nav-menu">
-      <a href="../portalevent_landingpage/landingpage.html">Beranda</a>
-      <a href="../portalevent_landingpage/landingpage.html">Event</a>
-      <a href="tentangkami.html">Tentang Kami</a>
-      <a href="../portalevent_landingpage/landingpage.html">Kontak</a>
-      <a href="loginbin.html">Login</a>
-    </nav>
-  </header>
+    <!-- HEADER (sama seperti landing page) -->
+    <header>
+        <div class="logo-text">
+            <a href="../setting_akun/setting-akun.html"><img src="../assets/logo.png" alt="Logo PAWERTI"></a>
+            <h1>PAWERTI</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../portalevent_landingpage/landingpage.html">Beranda</a></li>
+                <li><a href="../portalevent_landingpage/landingpage.html#event">Event</a></li>
+                <li><a href="tentangkami.html">Tentang Kami</a></li>
+                <li><a href="../portalevent_landingpage/landingpage.html#kontak">Kontak</a></li>
+                <li><a href="../portalevent_register/login.html">Login</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" aria-label="Buka menu" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu" aria-hidden="true">
+            <ul>
+                <li><a href="../portalevent_landingpage/landingpage.html">Beranda</a></li>
+                <li><a href="../portalevent_landingpage/landingpage.html#event">Event</a></li>
+                <li><a href="tentangkami.html">Tentang Kami</a></li>
+                <li><a href="../portalevent_landingpage/landingpage.html#kontak">Kontak</a></li>
+                <li><a href="../portalevent_register/login.html">Login</a></li>
+            </ul>
+        </div>
+    </header>
 
     <!-- SECTION: TENTANG KAMI -->
     <section class="about-section">
@@ -63,75 +83,111 @@
         </div>
     </section>
 
-    <!-- PARTISIPASI -->
-    <section class="partisipasi" id="partisipasi">
+    <!-- Partisipasi -->
+    <section class="partisipasi">
         <h2>Partisipasi</h2>
-        <div class="cards">
+        <div class="partisipasi-cards">
             <div class="card">
-                <div class="icon">💃</div>
-                <h3>Pelatihan Tari</h3>
-                <p>Ikuti pelatihan menari tradisional dari para seniman Jawa terbaik.</p>
-                <button>Gabung Pelatihan
-                  <a href="loginbin.html"></a>
-                </button>
+                <div class="card-image">
+                    <img src="../assets/pertunjukan.png" alt="Pelatihan Tari">
+                </div>
+                <h4>Pelatihan Tari</h4>
+                <p>Ikuti pelatihan tari tradisional dari Jawa seperti tari di Yogya dll.</p>
+                <button>Gabung Pelatihan</button>
             </div>
             <div class="card">
-                <div class="icon">🎵</div>
-                <h3>Kursus Musik</h3>
-                <p>Pelajari musik tradisional Jawa seperti gamelan dan tembang.</p>
+                <div class="card-image">
+                    <img src="../assets/musik.png" alt="Kursus Musik">
+                </div>
+                <h4>Kursus Musik</h4>
+                <p>Pelajari alat musik tradisional Jawa seperti gamelan, angklung, dan sasando.</p>
                 <button>Mulai Belajar</button>
             </div>
             <div class="card">
-                <div class="icon">🎨</div>
-                <h3>Workshop Seni</h3>
-                <p>Ikuti workshop seni rupa dan kerajinan khas budaya Jawa.</p>
+                <div class="card-image">
+                    <img src="../assets/workshop.png" alt="Workshop Seni">
+                </div>
+                <h4>Workshop Seni</h4>
+                <p>Belajar membuat batik, ukiran kayu, dan kerajinan tradisional lainnya.</p>
                 <button>Daftar Workshop</button>
             </div>
             <div class="card">
-                <div class="icon">📖</div>
-                <h3>Dokumentasi Budaya</h3>
-                <p>Bagikan dokumentasi dan tulisan mengenai budaya Jawa.</p>
+                <div class="card-image">
+                    <img src="../assets/book.png" alt="Dokumentasi Budaya">
+                </div>
+                <h4>Dokumentasi Budaya</h4>
+                <p>Berpartisipasi dalam pelestarian budaya melalui dokumentasi digital.</p>
                 <button>Kontribusi</button>
             </div>
         </div>
     </section>
 
-     <!-- Footer -->
-        <footer class="footer">
+
+    <!-- Footer (sama seperti landing page) -->
+    <footer class="footer">
         <div class="footer-container">
             <div class="footer-col footer-about">
-            <div class="footer-logo">
-                <img src="Group 9.png" alt="Logo Pawerti" />
-                <h3>Pawerti</h3>
-            </div>
-            <p>
-                Melestarikan dan mempromosikan kekayaan budaya Jawa melalui berbagai
-                event dan kegiatan budaya.
-            </p>
+                <div class="footer-logo">
+                    <img src="../assets/logo2.png" alt="Logo Pawerti" />
+                    <h3>Pawerti</h3>
+                </div>
+                <p>
+                    Melestarikan dan mempromosikan kekayaan budaya Jawa melalui berbagai
+                    event dan kegiatan budaya.
+                </p>
             </div>
 
-        <div class="footer-col footer-category">
-        <h3>Kategori</h3>
-        <ul>
-            <li>Pertunjukan Seni</li>
-            <li>Workshop Budaya</li>
-            <li>Musik Tradisional</li>
-            <li>Upacara Adat</li>
-        </ul>
+            <div class="footer-col footer-category">
+                <h3>Kategori</h3>
+                <ul>
+                    <li>Pertunjukan Seni</li>
+                    <li>Workshop Budaya</li>
+                    <li>Musik Tradisional</li>
+                    <li>Upacara Adat</li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-contact">
+                <h3>Kontak</h3>
+                <p>Email : inpo@portalkebudayaan@gmail.com</p>
+                <p>Telepon : 0881 0366 24551</p>
+                <p>
+                    Alamat : Jl. Tanimbar No 22, Kasim, Kec. Klojen,<br>
+                    Kota Malang Jawa Timur
+                </p>
+            </div>
         </div>
 
-        <div class="footer-col footer-contact">
-        <h3>Kontak</h3>
-        <p>Email : inpo@portalkebudayaan@gmail.com</p>
-        <p>Telepon : 0881 0366 24551</p>
-        <p>
-            Alamat : Jl. Tanimbar No 22, Kasim, Kec. Klojen,<br>
-            Kota Malang Jawa Timur
-        </p>
-        </div>
-    </div>
+        <hr class="footer-line" />
+    </footer>
 
-  <hr class="footer-line" />
-</footer>
+    <!-- Script untuk hamburger menu -->
+    <script>
+        (function(){
+            const btn = document.querySelector('.hamburger');
+            const menu = document.querySelector('.mobile-menu');
+            if(!btn || !menu) return;
+
+            function toggleMenu(){
+                const isOpen = btn.classList.toggle('active');
+                menu.classList.toggle('open', isOpen);
+                btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            }
+
+            btn.addEventListener('click', toggleMenu);
+
+            menu.querySelectorAll('a').forEach(a => {
+                a.addEventListener('click', ()=>{
+                    btn.classList.remove('active');
+                    menu.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    menu.setAttribute('aria-hidden', 'true');
+                    document.body.style.overflow = '';
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
